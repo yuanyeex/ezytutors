@@ -1,4 +1,4 @@
-use actix_web::{web, Responder, HttpResponse, HttpServer, App};
+use actix_web::{web, App, HttpResponse, HttpServer, Responder};
 use std::io;
 
 pub fn general_routes(cfg: &mut web::ServiceConfig) {
