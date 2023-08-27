@@ -1,8 +1,0 @@
-{
-    "rust-analyzer.linkedProjects": [
-        "./tutor-nodb/Cargo.toml",
-        "./tutor-nodb/Cargo.toml",
-        "./tutor-nodb/Cargo.toml",
-        "./tutor-nodb/Cargo.toml"
-    ]
-}
