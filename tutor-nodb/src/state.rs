@@ -1,5 +1,5 @@
-use std::sync::Mutex;
 use super::models::Course;
+use std::sync::Mutex;
 
 pub struct AppState {
     // shared immutable state
