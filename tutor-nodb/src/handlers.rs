@@ -128,10 +128,10 @@ mod tests {
         let app_state = web::Data::new(AppState {
             health_check_response: ".".to_string(),
             visit_count: Mutex::new(0),
-            courses: Mutex::new(vec![])
+            courses: Mutex::new(vec![]),
         });
 
-        let params = web::Path::from((1,1));
+        let params = web::Path::from((1, 1));
         let resp = get_course_detail(app_state, params).await;
 
         assert_eq!(resp.status(), StatusCode::OK)
