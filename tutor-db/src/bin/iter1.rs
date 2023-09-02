@@ -1,7 +1,7 @@
-use std::{io, env, vec};
-use dotenv::dotenv;
 use chrono::NaiveDateTime;
+use dotenv::dotenv;
 use sqlx::PgPool;
+use std::{env, io, vec};
 
 #[derive(Debug)]
 pub struct Course {
@@ -24,7 +24,7 @@ async fn main() -> io::Result<()> {
 
     let mut courses_list = vec![];
     for course_row in course_rows {
-        courses_list.push(Course{
+        courses_list.push(Course {
             course_id: course_row.course_id,
             tutor_id: course_row.tutor_id,
             course_name: course_row.course_name,
