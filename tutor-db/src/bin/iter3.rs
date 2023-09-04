@@ -1,9 +1,9 @@
-use std::{env, io};
-use std::sync::Mutex;
-use actix_web::{App, HttpServer, web};
-use sqlx::PgPool;
 use crate::routes::{course_routes, general_routes};
 use crate::state::AppState;
+use actix_web::{web, App, HttpServer};
+use sqlx::PgPool;
+use std::sync::Mutex;
+use std::{env, io};
 
 #[path = "../iter3/handlers.rs"]
 mod handlers;
@@ -27,7 +27,7 @@ async fn main() -> io::Result<()> {
     let database_url = env::var("DATABASE_URL").expect("DATABASE_URL is not set in .env file");
     let db_pool = PgPool::connect(&database_url).await.unwrap();
 
-    let shared_data = web::Data::new(AppState{
+    let shared_data = web::Data::new(AppState {
         health_check_response: "I'm good. You've already asked me ".to_string(),
         visit_count: Mutex::new(0),
         db: db_pool,
